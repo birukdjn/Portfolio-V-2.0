@@ -29,7 +29,7 @@ const getLanguageColor = (lang) => {
 export const fetchGitHubProjects = async (limit = null) => {
   try {
     const response = await fetch(
-      `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated`,
+      `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`,
     );
     const data = await response.json()
 
