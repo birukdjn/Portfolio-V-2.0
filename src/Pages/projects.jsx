@@ -75,16 +75,6 @@ export default function ProjectsSection() {
     getProjects();
   }, []);
 
-  useEffect(() => {
-    const gettotalProjects = async () => {
-      const totaldata = await fetchGitHubProjects();
-      setTotalProjects(totaldata);
-      setLoading(false);
-    };
-    gettotalProjects();
-  }, []);
-
-
   return (
     <section id="projects" className="relative py-20 bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-950 text-white overflow-hidden">
       {/* Enhanced Animated Background */}
@@ -197,6 +187,10 @@ export default function ProjectsSection() {
                         <div className="flex items-center space-x-1">
                           <Eye className="w-3 h-3 text-green-400" />
                           <span>{project.watches}</span>
+                        </div>
+                        <div className="flex items-center space-x-1">
+                          <GitCommit className="w-3 h-3 text-purple-400" />
+                          <span>{project.commits}</span>
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">

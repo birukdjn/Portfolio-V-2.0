@@ -1,4 +1,4 @@
-
+import { manualProjects } from "./manualProjects";
 const PROJECTIMAGES = "/projects/";
 const GITHUB_USERNAME = "birukdjn";
 
@@ -29,19 +29,25 @@ const getLanguageColor = (lang) => {
 export const fetchGitHubProjects = async (limit = null) => {
   try {
     const response = await fetch(
-      `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`,
+      `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=12`,
+      { cache: "no-store" }
     );
+    if (!response.ok) throw new Error("GitHub API limit reached");
     const data = await response.json()
 
-    if (!Array.isArray(data)) return [];
+    if (!Array.isArray(data)) throw new Error("Invalid GitHub response");
 
-    const projects = data
-      .map((repo) => ({
+    const projects = data.map((repo) => {
+      const language = repo.language || "Mixed";
+      const topics = Array.isArray(repo.topics) ? repo.topics : [];
+
+      return {
         title: repo.name.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase()),
         description: repo.description || "A professional project built with modern technologies.",
         stars: repo.stargazers_count,
         forks: repo.forks_count,
         watches: repo.watchers_count,
+        commits: repo.size,
         language: repo.language || "Mixed",
         languageColor: getLanguageColor(repo.language),
         lastCommit: new Date(repo.pushed_at).toLocaleDateString(undefined, {
@@ -56,10 +62,11 @@ export const fetchGitHubProjects = async (limit = null) => {
         liveUrl: repo.homepage || `${repo.html_url}/blob/${repo.default_branch}/README.md`,
         // Assumes images in /public/projects/ match repo name (e.g., gobet.png)
         images: [`${PROJECTIMAGES}${repo.name.toLowerCase()}.png`],
-      }));
+      };
+    });
     return limit ? projects.slice(0, limit) : projects;
   } catch (error) {
-    console.error("Error fetching projects:", error);
-    return [];
+    console.warn("GitHub failed — using manual projects", error);
+    return limit ? manualProjects.slice(0, limit) : manualProjects;
   }
 };

@@ -7,8 +7,6 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { fetchGitHubProjects } from "../../Data/projectsData";
 
-const PROJECTIMAGES = "/projects/";
-
 const ProjectImageCarousel = ({ images }) => {
     const [index, setIndex] = useState(0);
 
@@ -65,7 +63,7 @@ export default function ProjectsPage() {
 
     useEffect(() => {
         const getProjects = async () => {
-            const data = await fetchGitHubProjects();
+            const data = await fetchGitHubProjects(18);
             setProjects(data);
             setLoading(false);
         };
@@ -185,6 +183,10 @@ export default function ProjectsPage() {
                                                 <div className="flex items-center space-x-1">
                                                     <Eye className="w-3 h-3 text-green-400" />
                                                     <span>{project.watches}</span>
+                                                </div>
+                                                <div className="flex items-center space-x-1">
+                                                    <GitCommit className="w-3 h-3 text-purple-400" />
+                                                    <span>{project.commits}</span>
                                                 </div>
                                             </div>
                                             <div className="flex items-center space-x-2">
