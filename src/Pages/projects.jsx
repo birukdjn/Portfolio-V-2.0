@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { GitBranch, GitCommit, ExternalLink, FolderOpen, Globe, Star, Eye, GitFork, Loader2 } from "lucide-react";
+import { GitBranch, GitCommit, ExternalLink, FolderOpen, Globe, Star, Eye, GitFork, Loader2, Database } from "lucide-react";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { fetchGitHubProjects } from "../Data/projectsData";
@@ -191,6 +191,10 @@ export default function ProjectsSection() {
                         <div className="flex items-center space-x-1">
                           <GitCommit className="w-3 h-3 text-purple-400" />
                           <span>{project.commits}</span>
+                        </div>
+                        <div className="flex items-center space-x-1">
+                          <Database className="w-3 h-3 text-purple-400" />
+                          <span>{project.size} KB</span>
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">
