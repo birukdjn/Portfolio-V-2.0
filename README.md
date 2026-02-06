@@ -78,6 +78,7 @@ Built for developers who value **clean architecture, performance, and aesthetics
 │   │   ├── blogsdata.js
 │   │   ├── certificatesdata.js
 │   │   ├── experiencedata.js
+│   │   ├── manualprojects.js
 │   │   ├── projectsdata.js
 │   │   └── skillsdata.js
 │   │
