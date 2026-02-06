@@ -304,6 +304,12 @@ export default function ProjectsPage() {
                         </div>
                         <div className="text-center">
                             <div className="text-2xl font-bold text-indigo-400">
+                                {projects.reduce((total, proj) => total + (parseInt(proj.commits) || 0), 0)}+
+                            </div>
+                            <div className="text-sm">Total Commits</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-2xl font-bold text-indigo-400">
                                 {projects.reduce((total, proj) => total + proj.forks, 0)}+
                             </div>
                             <div className="text-sm">Total Forks</div>
