@@ -18,24 +18,9 @@ const certificatesData = [
     credentialUrl: "https://coursera.org/verify/ABC123",
     tags: ["Professional", "Full Stack", "Meta"]
   },
+
   {
     id: 2,
-    title: "AWS Solutions Architect",
-    issuer: "Amazon Web Services",
-    date: "2023-11-20",
-    duration: "3 months",
-    level: "Associate",
-    skills: ["AWS", "Cloud Architecture", "DevOps", "Security"],
-    image: null,
-    description: "AWS Certified Solutions Architect focusing on cloud infrastructure design and implementation.",
-    branch: "feature/cloud",
-    commits: 18,
-    status: "verified",
-    credentialUrl: "https://aws.amazon.com/certification/",
-    tags: ["Cloud", "AWS", "Architecture"]
-  },
-  {
-    id: 3,
     title: "React Developer Certification",
     issuer: "FreeCodeCamp",
     date: "2023-09-10",
@@ -50,29 +35,53 @@ const certificatesData = [
     credentialUrl: "https://freecodecamp.org/certification/",
     tags: ["Frontend", "React", "JavaScript"]
   },
- {
-  id: 4,
-  title: "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
-  issuer: "Oracle",
-  date: "2025-10-24",
-  duration: "2 months",
-  level: "Foundational",
-  skills: [
-    "Basic cloud concepts",
-    "Core OCI services ",
-    "OCI security and identity model",
-    "Compliance structure",
-    "OCI billing and cost management",
-    "Governance and administration"
-  ],
-  image:  `${CERTIFICATIONSIMAGES}oracle1.png`,
-  description: "This certification validates fundamental knowledge of Oracle Cloud Infrastructure (OCI) services for both technical and non-technical professionals.",
-  branch: "feature/cloud",
-  commits: 10,
-  status: "verified",
-  credentialUrl: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=35AE59554F84E8546F79A280D3C6BF4DB8A357446232C88681EC5978023757AF",
-  tags: ["Cloud", "Oracle", "OCI", "Foundational"]
-},
+  {
+    id: 3,
+    title: "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
+    issuer: "Oracle",
+    date: "2025-10-24",
+    duration: "2 months",
+    level: "Foundational",
+    skills: [
+      "Basic cloud concepts",
+      "Core OCI services ",
+      "OCI security and identity model",
+      "Compliance structure",
+      "OCI billing and cost management",
+      "Governance and administration"
+    ],
+    image: `${CERTIFICATIONSIMAGES}oracle1.png`,
+    description: "This certification validates fundamental knowledge of Oracle Cloud Infrastructure (OCI) services for both technical and non-technical professionals.",
+    branch: "feature/cloud",
+    commits: 10,
+    status: "verified",
+    credentialUrl: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=35AE59554F84E8546F79A280D3C6BF4DB8A357446232C88681EC5978023757AF",
+    tags: ["Cloud", "Oracle", "OCI", "Foundational"]
+  },
+  {
+    id: 4,
+    title: "Oracle Cloud Infrastructure 2025 Certified architect associate",
+    issuer: "Oracle",
+    date: "2025-10-24",
+    duration: "2 months",
+    level: "Foundational",
+    skills: [
+      "Basic cloud concepts",
+      "Core OCI services ",
+      "OCI security and identity model",
+      "Compliance structure",
+      "OCI billing and cost management",
+      "Governance and administration"
+    ],
+    image: `${CERTIFICATIONSIMAGES}oracle2.png`,
+    description: "This certification validates fundamental knowledge of Oracle Cloud Infrastructure (OCI) services for both technical and non-technical professionals.",
+    branch: "feature/cloud",
+    commits: 10,
+    status: "verified",
+    credentialUrl: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=35AE59554F84E8546F79A280D3C6BF4DB8A357446232C88681EC5978023757AF",
+    tags: ["Cloud", "Oracle", "OCI", "Foundational"]
+  },
+
   {
     id: 5,
     title: "Python for Data Science",
@@ -87,40 +96,24 @@ const certificatesData = [
     commits: 21,
     status: "verified",
     credentialUrl: null,
-    tags: ["Data Science", "Python", "Analysis","DevOps"]
+    tags: ["Data Science", "Python", "Analysis", "DevOps"]
   },
-   {
+  {
     id: 6,
     title: "Foundational C# with Microsoft",
     issuer: "freeCodeCamp",
     date: "2025-10-10",
     duration: "6 months",
     level: "Advanced",
-    skills: ["C#", ".NET", "Programing","Debugging"],
-    image:  `${CERTIFICATIONSIMAGES}csharp.png`,
+    skills: ["C#", ".NET", "Programing", "Debugging"],
+    image: `${CERTIFICATIONSIMAGES}csharp.png`,
     description: "A joint certification by Microsoft and freeCodeCamp that covers C# programming fundamentals, including syntax, logic, loops, methods, data types, and debugging using .NET and Visual Studio Code.",
     branch: "feature/Csharp",
     commits: 24,
     status: "verified",
     credentialUrl: "https://freecodecamp.org/certification/birukdjn/foundational-c-sharp-with-microsoft",
-    tags: ["Programing","backend", "C#", "ASP.NET","Microsoft"]
+    tags: ["Programing", "backend", "C#", "ASP.NET", "Microsoft"]
   },
-  {
-    id: 7,
-    title: "DevOps Engineering",
-    issuer: "Microsoft",
-    date: "2023-03-15",
-    duration: "3 months",
-    level: "Advanced",
-    skills: ["Docker", "Kubernetes", "CI/CD", "Azure"],
-    image: "/certificates/devops-engineering.jpg",
-    description: "DevOps certification covering containerization, orchestration, and continuous deployment.",
-    branch: "feature/devops",
-    commits: 28,
-    status: "verified",
-    credentialUrl: null,
-    tags: ["DevOps", "Docker", "CI/CD"]
-  }
 ];
 
 export default certificatesData;
